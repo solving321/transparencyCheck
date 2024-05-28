@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Opacity Control</title>
+    <style>
+        .content {
+            position: absolute;
+            top: 10px; /* Adjust this value to position the content below the .div */
+            left: 15px;
+            text-align: center;
+            color: aqua;
+        }
+        .div {
+            width: 500px;
+            height: 400px;
+            opacity: 0.5;
+            background-color: rgb(22, 3, 3);
+            overflow: auto;
+            margin-bottom: 20px;
+            z-index: 100;
+        }
+        #opacity-control {
+            display: flex;
+            align-items: center;
+        }
+        #opacity-display {
+            margin-left: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="content">
+        <p>Text inside the div to test</p>
+        <p style="color: green;">Text inside the div to test</p>
+        <p style="color: red;">Text inside the div to test</p>
+        <p style="color: blue;">Text inside the div to test</p>
+        <img src="./image1.png" alt="logo1" width="80" height="80">
+        <img src="./image2.jpg" alt="logo2" width="80" height="80">
+        <img src="./image3.png" alt="logo3" width="80" height="80">
+        <img src="./image4.avif" alt="logo4" width="80" height="80">
+        <img src="./image5.webp" alt="logo5" width="150" height="150">
+    </div>
+    <div class="div">
+    </div>
+    <div id="opacity-control">
+        <button id="decrease">-</button>
+        <input type="text" id="opacity-input" value="0.5" readonly style="width: 50px; text-align: center;">
+        <button id="increase">+</button>
+        <div id="opacity-display">Opacity: 0.5</div>
+    </div>
+
+    <script>
+        const ele = document.querySelector('.div');
+        const decreaseButton = document.getElementById('decrease');
+        const increaseButton = document.getElementById('increase');
+        const opacityInput = document.getElementById('opacity-input');
+        const opacityDisplay = document.getElementById('opacity-display');
+
+        // Update display and opacity
+        const updateOpacity = (value) => {
+            ele.style.opacity = value;
+            opacityInput.value = value;
+            opacityDisplay.textContent = `Opacity: ${value}`;
+        };
+
+        // Event listeners for buttons
+        decreaseButton.addEventListener('click', () => {
+            let opacity = parseFloat(opacityInput.value);
+            if (opacity > 0) {
+                opacity = Math.max(0, opacity - 0.1).toFixed(1);
+                updateOpacity(opacity);
+            }
+        });
+
+        increaseButton.addEventListener('click', () => {
+            let opacity = parseFloat(opacityInput.value);
+            if (opacity < 1) {
+                opacity = Math.min(1, opacity + 0.1).toFixed(1);
+                updateOpacity(opacity);
+            }
+        });
+
+        // Initial display update
+        updateOpacity(opacityInput.value);
+    </script>
+</body>
+</html>
