@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Role Tag Examples</title>
+  <style>
+    .box {
+        border: 1px solid black;
+        padding: 10px;
+    }
+    .scrollbar {
+        width: 200px;
+        height: 200px;
+        overflow: auto;
+        border: 1px solid #ccc;
+        padding: 10px;
+    }
+    .separator {
+        width: 100%;
+        height: 1px;
+        background-color: #ccc;
+        margin: 10px 0;
+    }
+
+
+    .slidecontainer {
+        width: 100%; /* Width of the outside container */
+    }
+
+    /* The slider itself */
+    .slider {
+        -webkit-appearance: none;  /* Override default CSS styles */
+        appearance: none;
+        width: 100%; /* Full-width */
+        height: 25px; /* Specified height */
+        background: #d3d3d3; /* Grey background */
+        outline: none; /* Remove outline */
+        opacity: 0.7; /* Set transparency (for mouse-over effects on hover) */
+        -webkit-transition: .2s; /* 0.2 seconds transition on hover */
+        transition: opacity .2s;
+    }
+
+    /* Mouse-over effects */
+    .slider:hover {
+        opacity: 1; /* Fully shown on mouse-over */
+    }
+
+    /* The slider handle (use -webkit- (Chrome, Opera, Safari, Edge) and -moz- (Firefox) to override default look) */
+    .slider::-webkit-slider-thumb {
+        -webkit-appearance: none; /* Override default look */
+        appearance: none;
+        width: 25px; /* Set a specific slider handle width */
+        height: 25px; /* Slider handle height */
+        background: #04AA6D; /* Green background */
+        cursor: pointer; /* Cursor on hover */
+    }
+
+    .slider::-moz-range-thumb {
+        width: 25px; /* Set a specific slider handle width */
+        height: 25px; /* Slider handle height */
+        background: #04AA6D; /* Green background */
+        cursor: pointer; /* Cursor on hover */
+    }
+
+    .menu {
+        display: flex;
+        background-color: #333;
+        padding: 10px;
+        justify-content: space-between;
+    }
+    .menu-item {
+        margin-right: 10px;
+    }
+    .menu-item a {
+        text-decoration: none;
+        color: #fff;
+        padding: 5px 10px;
+        border-radius: 3px;
+    }
+    .menu-item a:hover {
+        background-color: #555;
+    }
+  </style>
+</head>
+<body>
+
+<!-- Button -->
+<div class="box">
+    <h3>button tags</h3>
+    <button type="button">Click Me!</button>
+    <br/>
+    <br/>
+    <div role="button" tabindex="-1">Role Button with negative tabindex</div>
+    <div role="button">Role Button</div>
+    <div role="button" tabindex="0">Role Button with Tabindex</div>
+    <a role="button">Role Button Link</a> <br/>
+    <a role="button" tabindex="0">Role Button Link with Tabindex</a> <br/>
+    <span role="button">Role Button Span</span> <br/>
+    <span role="button" tabindex="0">Role Button Span with Tabindex</span> <br/>
+    <br/>
+    <br/>
+</div>
+
+<!-- Checkbox -->
+<div class="box">
+
+<h3>Checkbox tags</h3>
+<input type="checkbox" id="C" name="C" value="C"/>
+    <label>C</label> <br>
+<input type="checkbox" id="Java" name="Java" value="Java" checked=?yes?/>
+    <label>Java</label> <br>
+<input type="checkbox" id="Python" name="Python" value="Python"/>
+    <label>Python</label> <br>
+<input type="checkbox" id="PHP" name="PHP" value="PHP"/>
+    <label>PHP</label>
+<br/>
+<br/>
+<br/>
+<div role="checkbox">Role Checkbox</div>
+<div role="checkbox" tabindex="0">Role Checkbox with Tabindex</div>
+<a role="checkbox">Role Checkbox Link</a> <br/>
+<a role="checkbox" tabindex="0">Role Checkbox Link with Tabindex</a> <br/>
+<span role="checkbox">Role Checkbox Span</span> <br/>
+<span role="checkbox" tabindex="0">Role Checkbox Span with Tabindex</span> <br/>
+
+</div>
+
+<div class="box">
+    <td contenteditable="true">Notes</td>
+    <div role="gridcell">Item cost</div>
+</div>
+
+
+<div class="box">
+    <a href="#">Role Link</a>
+
+    <div role="link">Role Link Div</div>
+    <div role="link" tabindex="0">Role Link Div with Tabindex</div>
+    <a role="link">Role Link</a> <br/>
+    <a role="link" tabindex="0">Role Link with Tabindex</a> <br/>
+    <span role="link">Role Link Span</span> <br/>
+    <span role="link" tabindex="0">Role Link Span with Tabindex</span> <br/>
+</div>
+
+<div class="box">
+    <menu type="context" id="mymenu">
+        <menuitem label="Refresh" onclick="window.location.reload();" icon="ico_reload.png"> data 1
+        </menuitem>
+        <menu label="Share on...">
+          <menuitem label="Twitter" icon="ico_twitter.png"
+          onclick="window.open('//twitter.com/intent/tweet?text='+window.location.href);"> data 2
+          </menuitem>
+          <menuitem label="Facebook" icon="ico_facebook.png"
+          onclick="window.open('//facebook.com/sharer/sharer.php?u='+window.location.href);"> data 3
+          </menuitem>
+        </menu>
+        <menuitem label="Email This Page"
+        onclick="window.location='mailto:?body='+window.location.href;">data 4</menuitem>
+    </menu>
+
+    <div role="menuitem">Role Menuitem</div>
+    <div role="menuitem" tabindex="0">Role Menuitem with Tabindex</div>
+    <a role="menuitem">Role Menuitem Link</a> <br/>
+    <a role="menuitem" tabindex="0">Role Menuitem Link with Tabindex</a> <br/>
+    <span role="menuitem">Role Menuitem Span</span> <br/>
+    <span role="menuitem" tabindex="0">Role Menuitem Span with Tabindex</span> <br/>
+
+    <br/>
+    <br/>
+    <br/>
+
+</div>
+
+<div class="box">
+    <label for="check_terms">Input</label>
+    <input type="checkbox" id="check_terms" />
+    <div role="menuitemcheckbox">Role Menuitemcheckbox</div>
+    <div role="menuitemcheckbox" tabindex="0">Role Menuitemcheckbox with Tabindex</div>
+    <a role="menuitemcheckbox">Role Menuitemcheckbox Link</a> <br/>
+    <a role="menuitemcheckbox" tabindex="0">Role Menuitemcheckbox Link with Tabindex</a> <br/>
+    <span role="menuitemcheckbox">Role Menuitemcheckbox Span</span> <br/>
+    <span role="menuitemcheckbox" tabindex="0">Role Menuitemcheckbox Span with Tabindex</span> <br/>
+<br/>
+<br/>
+<br/>
+</div>
+
+
+<div class="box">
+    <label for="check_terms">Input</label>
+    <input type="radio" id="check_terms" />
+    <div role="menuitemradio">Role menuitemradio</div>
+    <div role="menuitemradio" tabindex="0">Role menuitemradio with Tabindex</div>
+    <a role="menuitemradio">Role menuitemradio Link</a> <br/>
+    <a role="menuitemradio" tabindex="0">Role menuitemradio Link with Tabindex</a> <br/>
+    <span role="menuitemradio">Role menuitemradio Span</span> <br/>
+    <span role="menuitemradio" tabindex="0">Role menuitemradio Span with Tabindex</span> <br/>
+<br/>
+<br/>
+<br/>
+</div>
+
+<!-- Option -->
+<div class="box">
+
+<label for="cars">Choose a car:</label>
+
+<select id="cars">
+    <option value="volvo">Volvo</option>
+    <option value="saab">Saab</option>
+    <option value="opel">Opel</option>
+    <option value="audi">Audi</option>
+</select>
+
+<div role="option">Role Option</div>
+<div role="option" tabindex="0">Role Option with Tabindex</div>
+<a role="option">Role Option Link</a> <br/>
+<a role="option" tabindex="0">Role Option Link with Tabindex</a> <br/>
+<span role="option">Role Option Span</span> <br/>
+<span role="option" tabindex="0">Role Option Span with Tabindex</span> <br/>
+<br/>
+<br/>
+<br/>
+
+</div>
+
+
+<div class="box">
+    <label for="file">Downloading progress:</label>
+    <progress id="file" value="32" max="100"> 32% </progress>
+    <progress value="3" max="10"></progress>
+</div>
+
+<!-- Radio -->
+<div class="box">
+    <input type="radio" id="gender" name="gender" value="male"/> Male
+    <br>
+    <input type="radio" id="gender" name="gender" value="female"/> Female <br/>
+    <div role="radio">Role Radio</div>
+    <div role="radio" tabindex="0">Role Radio with Tabindex</div>
+    <a role="radio">Role Radio Link</a> <br/>
+    <a role="radio" tabindex="0">Role Radio Link with Tabindex</a> <br/>
+    <span role="radio">Role Radio Span</span> <br/>
+    <span role="radio" tabindex="0">Role Radio Span with Tabindex</span> <br/>
+
+    <br/>
+    <br/>
+    <br/>
+</div>
+
+<!-- Scrollbar -->
+<div class="box">
+    <div role="scrollbar" style="height: 20px; width: 20px; overflow:scroll">Role Scrollbar uhigvyuyhiojpk[lp];[ lpokpijuhgytccfyguhijokpl[; pl[okijuhgyftrxedrftgyhuijopk[l ][[plkoijuhgyftr</div>
+    <div role="scrollbar" tabindex="0">Role Scrollbar with Tabindex</div>
+    <a role="scrollbar">Role Scrollbar Link</a> <br/>
+    <a role="scrollbar" tabindex="0">Role Scrollbar Link with Tabindex</a> <br/>
+    <span role="scrollbar">Role Scrollbar Span</span> <br/>
+    <span role="scrollbar" tabindex="0">Role Scrollbar Span with Tabindex</span> <br/>
+    <br/>
+    <br/>
+    <br/>
+</div>
+
+
+ <!-- Separator -->
+<div class="box">
+    <h1>Content Above Separator</h1>
+    <div class="separator" role="separator"></div>
+    <p>Some content below the separator.</p>
+</div>
+
+<!-- Slider -->
+<div class="box">
+    <div class="slidecontainer">
+        <input type="range" min="1" max="100" value="50" class="slider" id="myRange">
+    </div>
+
+    <div role="slider" aria-valuemin="0" aria-valuemax="100" aria-valuenow="50">Role Slider</div>
+    <div role="slider" tabindex="0" aria-valuemin="0" aria-valuemax="100" aria-valuenow="50">Role Slider with Tabindex</div>
+    <a role="slider">Role Slider Link</a> <br/>
+    <a role="slider" tabindex="0">Role Slider Link with Tabindex</a> <br/>
+    <span role="slider">Role Slider Span</span> <br/>
+    <span role="slider" tabindex="0">Role Slider Span with Tabindex</span> <br/>
+
+    <br/>
+    <br/>
+    <br/>
+</div>
+
+<div class="box">
+    <label for="quantity">Quantity:</label>
+    <input type="number" id="quantity" name="quantity" min="1" max="10" value="1" step="1">
+
+    <div role="spinbutton" aria-valuemin="0" aria-valuemax="100" aria-valuenow="50">Role Spinbutton</div>
+    <div role="spinbutton" tabindex="0" aria-valuemin="0" aria-valuemax="100" aria-valuenow="50">Role Spinbutton with Tabindex</div>
+    <a role="spinbutton">Role Spinbutton Link</a> <br/>
+    <a role="spinbutton" tabindex="0">Role Spinbutton Link with Tabindex</a> <br/>
+    <span role="spinbutton">Role Spinbutton Span</span> <br/>
+    <span role="spinbutton" tabindex="0">Role Spinbutton Span with Tabindex</span> <br/>
+
+    <br/>
+    <br/>
+    <br/>
+</div>
+
+
+<!-- combobox -->
+<div class="box">
+    <div class="combobox">
+    <select id="fruitSelect" aria-label="Select a fruit">
+        <option value="" disabled selected>Select a fruit</option>
+        <option value="apple">Apple</option>
+        <option value="banana">Banana</option>
+        <option value="orange">Orange</option>
+        <option value="grape">Grape</option>
+        <option value="kiwi">Kiwi</option>
+    </select>
+    <div class="arrow">&#x25BC;</div>
+    </div>
+</div>
+
+<div class="box">
+    <select Name="Name_of_list_box" Size="Number_of_options">
+        <option> List item 1 </option>
+        <option> List item 2 </option>
+        <option> List item 3 </option>
+        <option> List item N </option>
+      </select>
+</div>
+
+<div class="box">
+    <menu>
+        <li>Coffee</li>
+        <li>Tea</li>
+        <li>Milk</li>
+    </menu>
+</div>
+
+<div class="box">
+    <div class="menu" role="menubar">
+        <div class="menu-item" role="menuitem">
+          <a href="#">Home</a>
+        </div>
+        <div class="menu-item" role="menuitem">
+          <a href="#">About</a>
+        </div>
+        <div class="menu-item" role="menuitem">
+          <a href="#">Services</a>
+        </div>
+        <div class="menu-item" role="menuitem">
+          <a href="#">Contact</a>
+        </div>
+    </div>
+</div>
+
+<div class="box">
+    <ul class="tablist" role="tablist">
+        <li class="tablist-item" role="presentation">
+          <a href="#tab1" role="tab" aria-selected="true">Tab 1</a>
+        </li>
+        <li class="tablist-item" role="presentation">
+          <a href="#tab2" role="tab">Tab 2</a>
+        </li>
+        <li class="tablist-item" role="presentation">
+          <a href="#tab3" role="tab">Tab 3</a>
+        </li>
+    </ul>
+</div>
+
+<div class="box">
+    <div role="row">
+        <div role="gridcell">Jane</div>
+        <div role="gridcell">Smith</div>
+        <div role="gridcell">496-619-5098</div>
+        …
+      </div>
+</div>
+
+<script>
+    const fruitSelect = document.getElementById('fruitSelect');
+
+    fruitSelect.addEventListener('change', function() {
+      const selectedFruit = this.value;
+      console.log('Selected fruit:', selectedFruit);
+    });
+</script>
+</body>
+</html>
